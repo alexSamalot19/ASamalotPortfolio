@@ -11,3 +11,4 @@ A summary of recent relevant assignments
 | Train Tracker | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/Train-Scheduler/) |
 | Buzzer Beater Trivia | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/TriviaGame/) |
 | GifTastic | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/GifTastic/) |
+| FriendFinder | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/FriendFinder/) |
