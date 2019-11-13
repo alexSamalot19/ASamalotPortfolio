@@ -12,4 +12,4 @@ A summary of recent relevant assignments
 | Buzzer Beater Trivia | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/TriviaGame/) |
 | GifTastic | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/GifTastic/) |
 | FriendFinder | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/FriendFinder/) |
-| Classic Burger | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/Burger) |
+| Classic Burgers | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/Burger) |
