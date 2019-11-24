@@ -13,3 +13,5 @@ A summary of recent relevant assignments
 | GifTastic | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/GifTastic/) |
 | FriendFinder | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/FriendFinder/) |
 | Classic Burgers | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/Burger) |
+| Classic Burger (Sequelized) | [Portfolio](https://alexsamalot19.github.io/Samalot-Alexander-Portfolio/) | [GitHub Repo](https://github.com/alexSamalot19/sequelizedBurger) |
+
