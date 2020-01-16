@@ -190,13 +190,14 @@
             </p>
             <div class="row">
               <pre class="prettyprint lang-js">
-                                    
-            let baseSalary = 30000;
-            let overtime = 10;
-            let rate = 20;
+            // Transportation Costs Including Gas and Regular Maintenance                         
+            let Price = 20000;
+            let maintenancePerMonth = 60;
+            let gasPerMonth = 80;
+            let monthsOfOwnership = 120;
 
-            funciton getWage(baseSalary, overtime, rate) {
-                return baseSalary + (overtime * rate);
+            funciton getTransportationCost(Price, maintanencePerMonth, gasPerMonth, monthsOfOwnership) {
+                return Price + ((maintenancePerMonth + gasPerMonth) * monthsOfOwnership);
             }
                   </pre
               >
@@ -210,14 +211,15 @@
             </p>
             <div class="row">
               <pre class="prettyprint lang-js">
-                                      
-            let employee = {
-                baseSalary: 30000;
-                overtime: 10;
-                rate = 20;
+            // Transportation Costs Including Gas and Regular Maintenance                                                 
+            let myVehichle = {
+                Price: 20000,
+                maintenancePerMonth: 60,
+                gasPerMonth: 80,
+                monthsOfOwnership: 120,
 
-                getWage: function() {
-                    return this.baseSalary + (this.overtime * this.rate);
+                getTransportationCost: function() {
+                    return this.Price + ((this.maintenancePerMonth + this.gasPerMonth ) * this.monthsOfOwnership);
                     }
             };
                     </pre
@@ -266,9 +268,9 @@
               be heavy with OOP. Taking time to attend a Full Stack Bootcamp has
               been rewarding for myself (and anyone looking to read or reuse my
               codes). OOP is very large subject and this brief blog post has
-              only covered the four most fundamental principles. I would
-              encourage anyone interested to go much deeper into the topic in
-              their language of choice.
+              only covered the four most fundamental principles at the surface
+              level. I would encourage anyone interested to go much deeper into
+              the topic in their language of choice.
             </p>
           </div>
         </div>
