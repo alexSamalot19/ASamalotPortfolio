@@ -163,9 +163,9 @@
               who writes code. My first exposure to software development was
               evaluating mathematical functions. My B.S. Thesis was a simple
               time series algorithm and I have been hooked on writing code ever
-              since. At the time I expected it would be a stand alone project. I
-              had no idea I would be adapting the methodology through an M.S.
-              Thesis and a publication. Self admittedly I was guilty of
+              since. At the time I expected my research would be a stand alone
+              project. I had no idea I would be adapting the methodology through
+              a M.S. Thesis and a publication. Self admittedly, I was guilty of
               separating related data and functions with reuse of similar
               interrelated functions with quite a bit of interdependency.
               Learning Full Stack Development has enhanced my use of OOP to
@@ -173,7 +173,7 @@
             </p>
             <p class="lead">
               OOP takes out the unnecessary interdependency with four major
-              principles, Encapsulation Abstraction, Inheritance and
+              principles, Encapsulation, Abstraction, Inheritance and
               Polymorphism.
             </p>
             <br />
@@ -193,7 +193,7 @@
             // Transportation Costs Including Gas and Regular Maintenance                         
             let price = 20000;
             let maintenancePerMonth = 60;
-            let gasPerMonth = 80;
+            let gasPerMonth = 150;
             let monthsOfOwnership = 120;
 
             funciton getTransportationCost(price, maintanencePerMonth, gasPerMonth, monthsOfOwnership) {
@@ -207,7 +207,10 @@
               make revisions to the code the relationships would be less clear
               than if the parameters were modeled as properties of an object.
               This further improves organization when the amount of properties
-              and methods increase.
+              and methods increase. The same operations are listed below using
+              OOP. Think about how much clearer this code would be to read if
+              there was a group of people comparing cost of ownership (assuming
+              they drive the same amount).
             </p>
             <div class="row">
               <pre class="prettyprint lang-js">
@@ -215,7 +218,7 @@
             let myVehichle = {
                 price: 20000,
                 maintenancePerMonth: 60,
-                gasPerMonth: 80,
+                gasPerMonth: 150,
                 monthsOfOwnership: 120,
 
                 getTransportationCost: function() {
@@ -263,10 +266,10 @@
             <p>
               I do not necessarily believe that there is one correct style of
               writing code or even that my approach was incorrect when writing
-              the procedure for my research. However, now that I have written
-              enough OOP code I can tell my transition to web development will
-              be heavy with OOP. Taking time to attend a Full Stack Bootcamp has
-              been rewarding for myself (and anyone looking to read or reuse my
+              the procedure for my research. Now that I have written enough OOP
+              code I can tell my transition to web development will be heavy
+              with OOP. Taking time to attend a Full Stack Bootcamp has been
+              rewarding for myself (and anyone looking to read or reuse my
               codes). OOP is very large subject and this brief blog post has
               only covered the four most fundamental principles at the surface
               level. I would encourage anyone interested to go much deeper into
