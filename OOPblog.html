@@ -191,12 +191,12 @@
             <div class="row">
               <pre class="prettyprint lang-js">
             // Transportation Costs Including Gas and Regular Maintenance                         
-            let Price = 20000;
+            let price = 20000;
             let maintenancePerMonth = 60;
             let gasPerMonth = 80;
             let monthsOfOwnership = 120;
 
-            funciton getTransportationCost(Price, maintanencePerMonth, gasPerMonth, monthsOfOwnership) {
+            funciton getTransportationCost(price, maintanencePerMonth, gasPerMonth, monthsOfOwnership) {
                 return Price + ((maintenancePerMonth + gasPerMonth) * monthsOfOwnership);
             }
                   </pre
@@ -213,13 +213,13 @@
               <pre class="prettyprint lang-js">
             // Transportation Costs Including Gas and Regular Maintenance                                                 
             let myVehichle = {
-                Price: 20000,
+                price: 20000,
                 maintenancePerMonth: 60,
                 gasPerMonth: 80,
                 monthsOfOwnership: 120,
 
                 getTransportationCost: function() {
-                    return this.Price + ((this.maintenancePerMonth + this.gasPerMonth ) * this.monthsOfOwnership);
+                    return this.price + ((this.maintenancePerMonth + this.gasPerMonth ) * this.monthsOfOwnership);
                     }
             };
                     </pre
