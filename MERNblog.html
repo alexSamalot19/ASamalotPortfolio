@@ -194,29 +194,72 @@
               MERN application but it is not a how to with every line of code
               explained in the order it is written. This application is broken
               up into three major pages: a make topic page, a make user page and
-              a home page. The following code demonstrates how React-Router us
-              used to create routes for those pages.
+              a home page. Rather than fetching the other pages from the server
+              this app utilizes React-Router. There are three packages that fall
+              within react-router. There is a core package, a package for react
+              native and this application uses the react-router-dom package.
+              React-router-dom contains the document object model bindings for
+              the react router. The React Router API is based on three
+              components: Router (the route that keeps the UI in sync with the
+              URL), Link (Renders a navigation link) and Route (renders a UI
+              component dependency on the URL). The Router used in this
+              application is BrowserRouter the tags can be seen surrounding the
+              App component in the src/index.js below.
             </p>
             <div class="row">
               <xmp class="prettyprint lang-htmlXmp">
-                import React, { Component } from "react";
-                import { Route, Switch } from "react-router-dom";
-                import Home from "./pages/home";
-                import MakeTopic from "./pages/MakeTopic";
-                import MakeStudent from "./pages/MakeStudent";
-                
-                const App = () => (
-                  <div>
-                    <Switch>
-                      <Route exact path="/" component={Home} />
-                      <Route path="/MakeTopic" component={MakeTopic} />
-                      <Route path="/MakeStudent" component={MakeStudent} />
-                    </Switch>
-                  </div>
-                );
-                
-                export default App;
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
+
+            </xmp>
+            </div>
+            <p>
+              A router component can only have one child element so it is
+              important that the App component be the child component of
+              BrowserRouter. Within the App component a switch statement with
+              the different pages components. When the location changes because
+              of a navigation action, the child component App is rerendered. The
+              App component can be seen below.
+            </p>
+            <div class="row">
+              <xmp class="prettyprint lang-htmlXmp">
+import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
+import Home from "./pages/home";
+import MakeTopic from "./pages/MakeTopic";
+import MakeStudent from "./pages/MakeStudent";
+                
+const App = () => (
+  <div>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/MakeTopic" component={MakeTopic} />
+      <Route path="/MakeStudent" component={MakeStudent} />
+    </Switch>
+  </div>
+);
+                
+export default App;
+
+            </xmp>
+            </div>
+            <p>The Links appear in the home page as the example below</p>   
+            <div class="row">
+              <xmp class="prettyprint lang-htmlXmp">
+<Link to={"./MakeTopic"}>
+  <Button type="dark" className="input-lg">
+    Make Topic
+  </Button>
+</Link>
             </xmp>
             </div>
             <p>
