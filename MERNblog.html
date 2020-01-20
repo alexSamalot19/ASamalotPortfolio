@@ -165,28 +165,67 @@
               Overview of my MERN Stack App "Back Track"
             </p>
             <p>
-              This is a shared calendar MERN stack application which uses Mongo
-              DB as a database Express Routing a React JS Fornt End and Node JS
-              framework.
+              Back Track is group calendar application which uses the MERN Stack
+              (MongoDB, Express, React, Node.js) to create a user interface for
+              a shared google calendar. Additional functionality includes
+              features to encourage competition such as points and leaderboards
+              for users who schedule the most hours in a particular topic. The
+              MERN stack is a set of open source components which provide an
+              end-to-end framework utilizing JavaScript for every component.
+              MongoDB is an open source document database which stores JSON
+              documents in collections with dynamic schemas. It is used by the
+              back end of the application to store data. Express is a web
+              application framework that runs the back end of the application.
+              In this app Express connects the front end to the database. React
+              is a JavaScript library for building user interfaces. The front
+              end is broken into components which can hold its own state and can
+              pass its state down to child components. Child components can also
+              pass changes back to the parent through the use of callback
+              functions. Node.js is a JavaScript runtime environment that runs
+              the back end using express. It also includes a number of modules
+              that can be installed using the node package manager tool.
             </p>
             <p class="lead">
               Creating a Topic
             </p>
             <p>
-              Each page is broken into components. The Make Topic page contians
-              a table with the existing topics, a modal used to fill out
-              informations for new topics, a loading icon and a footer that
-              contains the add student button that triggers the modal. These
-              components interact with a state that contians a topics array as
-              well as a isFetching and isLoading boolean.
+              This blog will go through essential features of the app describing
+              the design and setup. This will encompass the entire setup of a
+              MERN application but it is not a how to with every line of code
+              explained in the order it is written. This application is broken
+              up into three major pages: a make topic page, a make user page and
+              a home page. The following code demonstrates how React-Router us
+              used to create routes for those pages.
             </p>
             <div class="row">
-              <pre class="prettyprint lang-js">
-            
-                code blocks
-            </pre
-              >
+              <xmp class="prettyprint lang-htmlXmp">
+                import React, { Component } from "react";
+                import { Route, Switch } from "react-router-dom";
+                import Home from "./pages/home";
+                import MakeTopic from "./pages/MakeTopic";
+                import MakeStudent from "./pages/MakeStudent";
+                
+                const App = () => (
+                  <div>
+                    <Switch>
+                      <Route exact path="/" component={Home} />
+                      <Route path="/MakeTopic" component={MakeTopic} />
+                      <Route path="/MakeStudent" component={MakeStudent} />
+                    </Switch>
+                  </div>
+                );
+                
+                export default App;
+
+            </xmp>
             </div>
+            <p>
+              The Make Topic page contains a table with the existing topics, a
+              modal used to fill out information for new topics, a loading icon
+              and a footer that contains the add student button that triggers
+              the modal. These components interact with a state that contains a
+              topics array as well as a isFetching and isLoading Boolean.
+            </p>
             <p class="lead">
               This App Demonstrates
             </p>
