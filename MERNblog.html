@@ -191,7 +191,7 @@
             <p>
               This blog will go through essential features of the app describing
               the design and setup. This will encompass the entire setup of a
-              MERN application but it is not a how to with every line of code
+              MERN application but it is not a "how to" with every line of code
               explained in the order it is written. This application is broken
               up into three major pages: a make topic page, a make user page and
               a home page. Rather than fetching the other pages from the server
@@ -201,9 +201,9 @@
               React-router-dom contains the document object model bindings for
               the react router. The React Router API is based on three
               components: Router (the route that keeps the UI in sync with the
-              URL), Link (Renders a navigation link) and Route (renders a UI
+              URL), Link (renders a navigation link) and Route (renders a UI
               component dependency on the URL). The Router used in this
-              application is BrowserRouter the tags can be seen surrounding the
+              application is BrowserRouter the. The tags can be seen surrounding the
               App component in the src/index.js below.
             </p>
             <div class="row">
@@ -263,12 +263,43 @@ export default App;
             </xmp>
             </div>
             <p>
-              The Make Topic page contains a table with the existing topics, a
+              The Make Topic page is a stateful class component. It contains a 
+              table with the existing topics, a
               modal used to fill out information for new topics, a loading icon
-              and a footer that contains the add student button that triggers
-              the modal. These components interact with a state that contains a
-              topics array as well as a isFetching and isLoading Boolean.
+              and a footer that contains the add topic button. 
+              These components interact with a state that contains a
+              topics array as well as a isFetching and isLoading Boolean. 
+              React uses the state to make dynamic applications. React keeps the
+               state in sync and can efficiently update the UI when data changes.
+               The page displays a loading icon when data is passed from the database 
+               to the front end and the modal appears
+               after the button on the footer is clicked. The code to create the component
+               for the make topic page is shown below (up to the initialization of the state). 
+               Notice that the footer and the topic form are imported as separate components.
+               Components should facilitate separation of concern. A stylesheet and UI 
+               design library are also imported to clean up the look of the page. The API
+               routes are also imported for populating the table when the page loads and 
+               when a new topic is added to the database. The route for saving a new topic is 
+               also included as a method in API.
             </p>
+            <div class="row">
+              <xmp class="prettyprint lang-htmlXmp">
+import React, { Component } from "react";
+import "../App.css";
+import Container from "../components/Container";
+import TopicFooter from "../components/TopicFooter";
+import { Table, Avatar, Spin, Icon, Modal } from "antd";
+import AddTopicForm from "../components/AddTopicForm";
+import API from "../utils/API";
+                
+class MakeTopic extends Component {
+  state = {
+    topics: [],
+    isFetching: false,
+    isAddTopicModalVisible: false
+  };
+            </xmp>
+            </div>
             <p class="lead">
               This App Demonstrates
             </p>
