@@ -178,7 +178,7 @@
               application framework that runs the back end of the application.
               In this app Express connects the front end to the database. React
               is a JavaScript library for building user interfaces. The front
-              end is broken into components which can hold its own state and can
+              end is broken into components which can hold their own state and can
               pass its state down to child components. Child components can also
               pass changes back to the parent through the use of callback
               functions. Node.js is a JavaScript runtime environment that runs
@@ -192,7 +192,7 @@
               This blog will go through essential features of the app describing
               the design and setup. This will encompass the entire setup of a
               MERN application but it is not a "how to" with every line of code
-              explained in the order it is written. This application is broken
+              explained in the order it was written. This application is broken
               up into three major pages: a make topic page, a make user page and
               a home page. Rather than fetching the other pages from the server
               this app utilizes React-Router. There are three packages that fall
@@ -225,7 +225,7 @@ ReactDOM.render(
             <p>
               A router component can only have one child element so it is
               important that the App component be the child component of
-              BrowserRouter. Within the App component a switch statement with
+              BrowserRouter. Within the App component a switch statement separates
               the different pages components. When the location changes because
               of a navigation action, the child component App is rerendered. The
               App component can be seen below.
@@ -266,7 +266,7 @@ export default App;
               The Make Topic page is a stateful class component. It contains a 
               table with the existing topics, a
               modal used to fill out information for new topics, a loading icon
-              and a footer that contains the add topic button. 
+              and a footer that enables the modal. 
               These components interact with a state that contains a
               topics array as well as a isFetching and isLoading Boolean. 
               React uses the state to make dynamic applications. React keeps the
