@@ -297,6 +297,25 @@ class MakeTopic extends Component {
     isFetching: false,
     isAddTopicModalVisible: false
   };
+
+  componentDidMount() {
+    this.fetchTopics();
+  }
+
+    fetchTopics = () => {
+    this.setState({
+      isFetching: false
+    });
+    API.getTopic()
+      .then(res =>
+        this.setState({
+          topics: res.data,
+          isFetching: false,
+          isAddTopicModalVisible: false
+        })
+      )
+      .catch(err => console.log(err));
+  };
             </xmp>
             </div>
             <p class="lead">
@@ -312,12 +331,25 @@ class MakeTopic extends Component {
              are not availble if the component is not. This frees up Resources
              for React to use elsewhere. In the case of this application
              if the topics table was destroyed the realted data would not be
-             not be in the front end.
+             not be in the front end. The funciton for fetching the topics that is 
+             called by componentDidMount is shown below.
           </p>
           <div class="row">
             <xmp class="prettyprint lang-htmlXmp">
-import React, { Component } from "react";
-
+              fetchTopics = () => {
+                this.setState({
+                  isFetching: false
+                });
+                API.getTopic()
+                  .then(res =>
+                    this.setState({
+                      topics: res.data,
+                      isFetching: false,
+                      isAddTopicModalVisible: false
+                    })
+                  )
+                  .catch(err => console.log(err));
+              };
           </xmp>
           </div>
 
