@@ -263,7 +263,12 @@ export default App;
             </xmp>
             </div>
             <p>
-              The Make Topic page is a stateful class component. It contains a 
+              The Make Topic page is a stateful class component. 
+              [Explain modules and imports]
+            </p>
+            <br>
+            <p>
+              It contains a 
               table with the existing topics, a
               modal used to fill out information for new topics, a loading icon
               and a footer that enables the modal. 
@@ -316,6 +321,21 @@ class MakeTopic extends Component {
       )
       .catch(err => console.log(err));
   };
+
+  fetchTopics = () => {
+    this.setState({
+      isFetching: false
+    });
+    API.getTopic()
+      .then(res =>
+        this.setState({
+          topics: res.data,
+          isFetching: false,
+          isAddTopicModalVisible: false
+        })
+      )
+      .catch(err => console.log(err));
+  };
             </xmp>
             </div>
             <p class="lead">
@@ -331,29 +351,18 @@ class MakeTopic extends Component {
              are not availble if the component is not. This frees up Resources
              for React to use elsewhere. In the case of this application
              if the topics table was destroyed the realted data would not be
-             not be in the front end. The funciton for fetching the topics that is 
-             called by componentDidMount is shown below.
+             not be in the front end. 
+            </p>
+            <br>
+       <p>
+            When the fetch data function is called
+            the state is altered to let the render know to make the loading icon visible.
+            The object: API 
+            was imported at the top of the page. It contains the methods for CRUD operations
+            on the database. The getTopics method is called asyncronously.
+            After the data is pulled to the topics field of the state,
+            the loading icon is closed. 
           </p>
-          <div class="row">
-            <xmp class="prettyprint lang-htmlXmp">
-              fetchTopics = () => {
-                this.setState({
-                  isFetching: false
-                });
-                API.getTopic()
-                  .then(res =>
-                    this.setState({
-                      topics: res.data,
-                      isFetching: false,
-                      isAddTopicModalVisible: false
-                    })
-                  )
-                  .catch(err => console.log(err));
-              };
-          </xmp>
-          </div>
-
-
 
             <p class="lead">
               This App Demonstrates
