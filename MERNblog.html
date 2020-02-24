@@ -186,7 +186,7 @@
               that can be installed using the node package manager tool.
             </p>
             <p class="lead">
-              Creating a Topic
+              Pages (Creating a Topic)
             </p>
             <p>
               This blog will go through essential features of the app describing
@@ -268,17 +268,16 @@ export default App;
               modal used to fill out information for new topics, a loading icon
               and a footer that enables the modal. 
               These components interact with a state that contains a
-              topics array as well as a isFetching and isLoading Boolean. 
+              topics array as well [as a isFetching and isLoading Boolean]. 
               React uses the state to make dynamic applications. React keeps the
                state in sync and can efficiently update the UI when data changes.
-               The page displays a loading icon when data is passed from the database 
-               to the front end and the modal appears
-               after the button on the footer is clicked. The code to create the component
+               The code to create the component
                for the make topic page is shown below (up to the initialization of the state). 
                Notice that the footer and the topic form are imported as separate components.
                Components should facilitate separation of concern. A stylesheet and UI 
                design library are also imported to clean up the look of the page. The API
-               routes are also imported for populating the table when the page loads and 
+               routes are also imported for populating the table when 
+               the component mounts and 
                when a new topic is added to the database. The route for saving a new topic is 
                also included as a method in API.
             </p>
@@ -300,6 +299,30 @@ class MakeTopic extends Component {
   };
             </xmp>
             </div>
+            <p class="lead">
+              Data Flow in the Front End
+            </p>
+          <p>
+             The topics data appears when the page loads because 
+             the render function is never a good place to fetch data 
+             or to do anything asynchronous. Instead, the data is fetched in
+             the lifecycle method: componentDidMount. Lifecycle methods
+             are special methods on the component class to run some code 
+             when a component mounts and unmounts. Resources for the component
+             are not availble if the component is not. This frees up Resources
+             for React to use elsewhere. In the case of this application
+             if the topics table was destroyed the realted data would not be
+             not be in the front end.
+          </p>
+          <div class="row">
+            <xmp class="prettyprint lang-htmlXmp">
+import React, { Component } from "react";
+
+          </xmp>
+          </div>
+
+
+
             <p class="lead">
               This App Demonstrates
             </p>
