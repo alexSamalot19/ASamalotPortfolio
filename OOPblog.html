@@ -291,8 +291,8 @@ public class Vehichle {
 
             <pre class="prettyprint lang-java">
 public static void main(String[] args){
-  Vehichle Vehichle = new Vehichle(20000, 60, 150, 120);
-  Vehichle HybridVehichle = new Vehichle(25000, 50, 80, 120);
+  Vehichle vehichle = new Vehichle(20000, 60, 150, 120);
+  Vehichle hybridVehichle = new Vehichle(25000, 50, 80, 120);
 
   System.out.printf("My vehichle cost %f, but if it was a hybrid it would cost %f", 
     myVehichle.getTransportationCost(), someOtherVehichle.getTransportationCost());
@@ -356,7 +356,7 @@ public class CompanyVehichle extends Vehichle {
 public static void main(String[] args){
   Vehichle costComparison[] = new Vehichle[1];
   costComparison[0] = new Vehichle(20000, 60, 150, 120);
-  costComparison[1] = new companyVehichle(20000, 60, 150, 120);
+  costComparison[1] = new CompanyVehichle(20000, 60, 150, 120);
 
   for (Vehichle car : costComparison){
     costComparison.getTransportationCost();
