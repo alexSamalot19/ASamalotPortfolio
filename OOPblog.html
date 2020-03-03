@@ -232,7 +232,7 @@ let vehichle = {
   getTransportationCost: function() {
     return this.price + ((this.maintenancePerMonth + this.gasPerMonth ) * this.monthsOfOwnership);
   }
-};
+}
                     </pre
               >
 
@@ -295,7 +295,7 @@ public static void main(String[] args){
   Vehichle hybridVehichle = new Vehichle(25000, 50, 80, 120);
 
   System.out.printf("My vehichle cost %f, but if it was a hybrid it would cost %f", 
-    myVehichle.getTransportationCost(), someOtherVehichle.getTransportationCost());
+    myVehichle.getTransportationCost(), hybridVehichle.getTransportationCost());
 
 }
             </pre>
@@ -359,7 +359,7 @@ public static void main(String[] args){
   costComparison[1] = new CompanyVehichle(20000, 60, 150, 120);
 
   for (Vehichle car : costComparison){
-    costComparison.getTransportationCost();
+    System.out.println(costComparison.getTransportationCost());
   }
 
 }
