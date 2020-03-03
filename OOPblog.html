@@ -238,7 +238,7 @@ let vehichle = {
 
               <p>
                 This JavaScript object could be made with a Java Class as well.
-                Classes are blueprints for objects. An example of the myVehichle
+                Classes are blueprints for objects. An example of the Vehichle
                 Class would be as follows:
               </p>
               <pre class="prettyprint lang-java">
@@ -271,8 +271,8 @@ public class Vehichle {
                 Java is a strongly typed language. Notice the keyword private
                 before the fields. The access modifier "private" gives someone
                 reading the code another piece of information about the data.
-                The private fields are owned by the class and should not (and
-                cannot) be externally modified.
+                The user knows the private fields are owned by the class and
+                should not (and cannot) be externally modified.
               </p>
             </div>
             <p class="lead">
@@ -283,10 +283,10 @@ public class Vehichle {
               code. It is easier to understand an object with a few properties
               than an object with a lot of properties and methods. Abstraction
               helps create a simpler user interface and reduces the impact of
-              change. The main method listed below could perform the same
-              comparison as below. Someone reading the main class would
-              immediately know the comparison being made and could look in the
-              Vehichle class to see what each of the fields are.
+              change. The main method listed below could perform the
+              transportation cost comparison. Someone reading the main class
+              would immediately know the comparison being made and could look in
+              the Vehichle class to see what each of the parameters are.
             </p>
 
             <pre class="prettyprint lang-java">
@@ -304,7 +304,7 @@ public static void main(String[] args){
               hybridVehichle object with the same fields and methods but
               different values such as lower gas and maintanence expenses and a
               higher upfront cost. The methods vehichle.getTransportationCost()
-              and hybridVehichle.getTransportationCost() In both coding
+              and hybridVehichle.getTransportationCost(). In both coding
               languages the code comparing the two vehichles reads similar to
               plain English.
             </p>
@@ -322,7 +322,7 @@ public static void main(String[] args){
               components can be reused eliminating redundant code.
             </p>
 
-            <p>
+            <!-- <p> 
               Inheritance can be applied to the Java example by creating a
               CompanyVehichle subclass of the vehichle superclass. This vehichle
               has maintanence reimbersed by the company so it has been removed
@@ -340,6 +340,7 @@ public class CompanyVehichle extends Vehichle {
 }
               </pre
             >
+            -->
             <p class="lead">
               Polymorphism
             </p>
