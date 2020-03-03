@@ -248,7 +248,7 @@
                     private double gasPerMonth;
                     private double monthsOfOwnership;
 
-                    private double calculateTransportationCost(double price, double maintanencePerMonth, double gasPerMonth, double monthsOfOwnership) {
+                    public double calculateTransportationCost(double price, double maintanencePerMonth, double gasPerMonth, double monthsOfOwnership) {
                       return this.price + ((this.maintenancePerMonth + this.gasPerMonth ) * this.monthsOfOwnership);
                     }
 
@@ -342,7 +342,7 @@
             <pre class="prettyprint lang-java">
               public class deliveryVan extends Vehichle {
 
-                private double calculateTransportationCost(double price, double gasPerMonth, double monthsOfOwnership) {
+                public double calculateTransportationCost(double price, double gasPerMonth, double monthsOfOwnership) {
                   return this.price + (this.gasPerMonth * this.monthsOfOwnership);
 
                 }
