@@ -322,7 +322,7 @@ public static void main(String[] args){
               from the Transportation costs. The subclass was created with only
               the declaration and the calculateTransportationCost override
               because the features that are the same were inherited using the
-              extends keyword.
+              extends keyword and is constructed using the superclass.
             </p>
             <pre class="prettyprint lang-java">
 public class CompanyVehicle extends Vehicle {
@@ -358,7 +358,7 @@ public static void main(String[] args){
   costComparison[1] = new CompanyVehicle(20000, 60, 150, 120);
 
   for (int i=0; i<=costComparison.length-1; i++){
-    System.out.println(costComparison[i].getTransportationCost());
+      System.out.println(costComparison[i].getTransportationCost());
   }
 
 }
