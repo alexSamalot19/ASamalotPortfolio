@@ -223,7 +223,7 @@ funciton getTransportationCost(price, maintanencePerMonth, gasPerMonth, monthsOf
             <div class="row">
               <pre class="prettyprint lang-js">
 // Transportation Costs Including Gas and Regular Maintenance                                                 
-let vehichle = {
+let vehicle = {
   price: 20000,
   maintenancePerMonth: 60,
   gasPerMonth: 150,
@@ -237,43 +237,37 @@ let vehichle = {
               >
 
               <p>
-                This JavaScript object could be made with a Java Class as well.
-                Classes are blueprints for objects. An example of the Vehichle
-                Class would be as follows:
+                This JavaScript object could be made with a Java class as well.
+                Classes are blueprints for objects. An example of the Vehicle
+                class would be as follows:
               </p>
               <pre class="prettyprint lang-java">
-public class Vehichle {
-  private double price;
-  private double maintanencePerMonth;
-  private double gasPerMonth;
-  private double monthsOfOwnership;
-
-  public double calculateTransportationCost(double price, double maintanencePerMonth, double gasPerMonth, double monthsOfOwnership) {
+public class Vehicle {
+  public final double transportationCost;
+  public double price;
+  public double maintenancePerMonth;
+  public double gasPerMonth;
+  public double monthsOfOwnership;
+              
+  public double calculateTransportationCost(double price, double maintenancePerMonth, double gasPerMonth, double monthsOfOwnership) {
     return this.price + ((this.maintenancePerMonth + this.gasPerMonth ) * this.monthsOfOwnership);
   }
-
-  Vehichle (double price, double maintanencePerMonth, double gasPerMonth, double monthsOfOwnership) {
+              
+  Vehicle(double price, double maintenancePerMonth, double gasPerMonth, double monthsOfOwnership) {
     this.price = price;
-    this.maintanencePerMonth = maintanencePerMonth;
+    this.maintenancePerMonth = maintenancePerMonth;
     this.gasPerMonth = gasPerMonth;
     this.monthsOfOwnership = monthsOfOwnership;
-
-    this.transportationCost = calculateTransportationCost(double price, double maintanencePerMonth, double gasPerMonth, double monthsOfOwnership);
+              
+    this.transportationCost = calculateTransportationCost(price, maintenancePerMonth, gasPerMonth, monthsOfOwnership);
   }
-
+              
   double getTransportationCost(){
     return this.transportationCost;
   }
-                    
+              
 }
               </pre>
-              <p>
-                Java is a strongly typed language. Notice the keyword private
-                before the fields. The access modifier "private" gives someone
-                reading the code another piece of information about the data.
-                The user knows the private fields are owned by the class and
-                should not (and cannot) be externally modified.
-              </p>
             </div>
             <p class="lead">
               Abstraction
@@ -286,26 +280,25 @@ public class Vehichle {
               change. The main method listed below could perform the
               transportation cost comparison. Someone reading the main class
               would immediately know the comparison being made and could look in
-              the Vehichle class to see what each of the parameters are.
+              the Vehicle class to see what each of the parameters are.
             </p>
 
             <pre class="prettyprint lang-java">
 public static void main(String[] args){
-  Vehichle vehichle = new Vehichle(20000, 60, 150, 120);
-  Vehichle hybridVehichle = new Vehichle(25000, 50, 80, 120);
+  Vehicle vehicle = new Vehicle(20000, 60, 150, 120);
+  Vehicle hybridVehicle = new Vehicle(25000, 50, 80, 120);
 
-  System.out.printf("My vehichle cost %f, but if it was a hybrid it would cost %f", 
-    myVehichle.getTransportationCost(), hybridVehichle.getTransportationCost());
-
+  System.out.printf("My vehicle cost %f, but if it was a hybrid it would cost %f",
+          vehicle.getTransportationCost(), hybridVehicle.getTransportationCost());
 }
             </pre>
             <p>
               This process could be repeated in JavaScript by creating a
-              hybridVehichle object with the same fields and methods but
+              hybridVehicle object with the same fields and methods but
               different values such as lower gas and maintanence expenses and a
-              higher upfront cost. The methods vehichle.getTransportationCost()
-              and hybridVehichle.getTransportationCost(). In both coding
-              languages the code comparing the two vehichles reads similar to
+              higher upfront cost. The methods vehicle.getTransportationCost()
+              and hybridVehicle.getTransportationCost(). In both coding
+              languages the code comparing the two vehicles reads similar to
               plain English.
             </p>
             <p class="lead">
@@ -322,9 +315,9 @@ public static void main(String[] args){
               components can be reused eliminating redundant code.
             </p>
 
-            <!-- <p> 
+            <p>
               Inheritance can be applied to the Java example by creating a
-              CompanyVehichle subclass of the vehichle superclass. This vehichle
+              CompanyVehicle subclass of the vehicle superclass. This vehicle
               has maintanence reimbersed by the company so it has been removed
               from the Transportation costs. The subclass was created with only
               the declaration and the calculateTransportationCost override
@@ -332,15 +325,20 @@ public static void main(String[] args){
               extends keyword.
             </p>
             <pre class="prettyprint lang-java">
-public class CompanyVehichle extends Vehichle {
+public class CompanyVehicle extends Vehicle {
 
-  public double calculateTransportationCost(double price, double gasPerMonth, double monthsOfOwnership) {
+  CompanyVehicle(double price, double maintenancePerMonth, double gasPerMonth, double monthsOfOwnership) {
+    super(price, maintenancePerMonth, gasPerMonth, monthsOfOwnership);
+  }
+
+  public double calculateTransportationCost(double price, double maintenancePerMonth, double gasPerMonth, double monthsOfOwnership) {
     return this.price + (this.gasPerMonth * this.monthsOfOwnership);
   }
+    
 }
               </pre
             >
-            -->
+
             <p class="lead">
               Polymorphism
             </p>
@@ -349,18 +347,18 @@ public class CompanyVehichle extends Vehichle {
               conditional statements associated with reusing functions. A
               methodology can be used in each object with differences handled in
               the object rather than a set of conditions within a function.
-              Going back to the vehichle Java example, an array could be made to
+              Going back to the vehicle Java example, an array could be made to
               compare the costs of ownership if the person uses their personal
-              vehichle for work of the vehichle using a polymorphic array.
+              vehicle for work of the vehicle using a polymorphic array.
             </p>
             <pre class="prettyprint lang-java">
 public static void main(String[] args){
-  Vehichle costComparison[] = new Vehichle[1];
-  costComparison[0] = new Vehichle(20000, 60, 150, 120);
-  costComparison[1] = new CompanyVehichle(20000, 60, 150, 120);
+  Vehicle costComparison[] = new Vehicle[2];
+  costComparison[0] = new Vehicle(20000, 60, 150, 120);
+  costComparison[1] = new CompanyVehicle(20000, 60, 150, 120);
 
-  for (Vehichle car : costComparison){
-    System.out.println(costComparison.getTransportationCost());
+  for (int i=0; i<=costComparison.length-1; i++){
+    System.out.println(costComparison[i].getTransportationCost());
   }
 
 }
