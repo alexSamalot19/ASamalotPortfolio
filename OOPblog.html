@@ -297,9 +297,9 @@ public static void main(String[] args){
               hybridVehicle object with the same fields and methods but
               different values such as lower gas and maintanence expenses and a
               higher upfront cost. The methods vehicle.getTransportationCost()
-              and hybridVehicle.getTransportationCost(). In both coding
-              languages the code comparing the two vehicles reads similar to
-              plain English.
+              and hybridVehicle.getTransportationCost() would access the values
+              for comparison. In both coding languages the code comparing the
+              two vehicles reads similar to plain English.
             </p>
             <p class="lead">
               Inheritance
@@ -307,10 +307,10 @@ public static void main(String[] args){
             <p>
               Inheritance is a mechanism in which one class acquires the
               property of another class. This eliminates redundant code between
-              different classes. A popular use of inheritance is child classes,
+              similar classes. A popular use of inheritance is child classes,
               which can be made to inherit the data and code features of their
               parent class. This is key to web development with JavaScript
-              libraries such as React JS which allows for reusing and modifying
+              libraries such as React. React allows for reusing and modifying
               components that make up the UI. Functionality common to the
               components can be reused eliminating redundant code.
             </p>
@@ -322,7 +322,7 @@ public static void main(String[] args){
               from the Transportation costs. The subclass was created with only
               the declaration and the calculateTransportationCost override
               because the features that are the same were inherited using the
-              extends keyword and is constructed using the superclass.
+              extends keyword and the constructor calling the superclass.
             </p>
             <pre class="prettyprint lang-java">
 public class CompanyVehicle extends Vehicle {
@@ -349,7 +349,7 @@ public class CompanyVehicle extends Vehicle {
               the object rather than a set of conditions within a function.
               Going back to the vehicle Java example, an array could be made to
               compare the costs of ownership if the person uses their personal
-              vehicle for work of the vehicle using a polymorphic array.
+              vehicle for work using a polymorphic array.
             </p>
             <pre class="prettyprint lang-java">
 public static void main(String[] args){
