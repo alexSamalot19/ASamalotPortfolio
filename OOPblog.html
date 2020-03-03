@@ -140,7 +140,7 @@
 
           <!-- Page Title Content -->
           <div class="padded-vertical">
-            <span class="post-date-alt">15 January, 2020</span>
+            <span class="post-date-alt">3 March[Draft], 2020</span>
             <h1 class="medium">
               Object Oriented Programming After a Few Years Writing Functional
               Code
@@ -235,6 +235,48 @@
             };
                     </pre
               >
+
+              <p>
+                This JavaScript object could be made with a Java Class as well.
+                Classes in Java are the blueprint for objects. An example of the
+                myVehichle Class would be as follows:
+              </p>
+              <pre class="prettyprint lang-java">
+                public class Vehichle {
+                    private double price;
+                    private double maintanencePerMonth;
+                    private double gasPerMonth;
+                    private double monthsOfOwnership;
+
+                    private double calculateTransportationCost(double price, double maintanencePerMonth, double gasPerMonth, double monthsOfOwnership) {
+                      return this.price + ((this.maintenancePerMonth + this.gasPerMonth ) * this.monthsOfOwnership);
+                    }
+
+                    Vehichle (double price, double maintanencePerMonth, double gasPerMonth, double monthsOfOwnership) {
+                      this.price = price;
+                      this.maintanencePerMonth = maintanencePerMonth;
+                      this.gasPerMonth = gasPerMonth;
+                      this.monthsOfOwnership = monthsOfOwnership;
+
+                      this.transportationCost = calculateTransportationCost(double price, double maintanencePerMonth, double gasPerMonth, double monthsOfOwnership);
+                    }
+
+                    double getTransportationCost(){
+                      return this.transportationCost()
+                    }
+                    
+                }
+              </pre>
+              <p>
+                Java is a strongly typed language. The class written out above
+                has more lines of code which highlight some of the ways Java OOP
+                encapsulate fields and methods within classes. Notice the
+                keyword private before the fields. A private field or The access
+                modifier private gives someone reading the code another piece of
+                information about the data. This also prevents another class
+                from modifying the value adding a layer of protection to the
+                encapsulated fields and methods.
+              </p>
             </div>
             <p class="lead">
               Abstraction
@@ -245,7 +287,34 @@
               data. It is also easier to understand an object with a few
               properties than an object with a lot of properties and methods.
               Abstraction helps create a simpler user interface and reduces the
-              impact of change.
+              impact of change. The JavaScript method could be called in an
+              app.js file seperate from the creation of the objects. Combined
+              with a runtime environment such as Node.js. If there were a number
+              of cars different objects could be made and
+              myVehichle.getTransportationCost() could be compared to
+              someOtherVehichle.getTransportationCost(). From an outside
+              perspective the comparison of the two vehichles can be read almost
+              like plain English. Expanding on this in Java, the main method
+              listed below could perform a number of different actions related
+              to comparing cost of ownership separating what the user would like
+              do from the code that is required to perform the actions.
+            </p>
+
+            <pre class="prettyprint lang-java">
+              public static void main(String[] args){
+                Vehichle myVehichle = new Vehichle(20000, 60, 150, 120);
+                Vehichle someOtherVehichle = new Vehichle(25000, 50, 80, 120);
+
+                System.out.printf("My vehichle cost %f, but if it was a hybrid it would cost %f", 
+                      myVehichle.getTransportationCost(), someOtherVehichle.getTransportationCost());
+
+              }
+            </pre>
+            <p>
+              someone reading the main class would immediately know the
+              comparison being made and could look in the Vehichle class to see
+              what each of the fields are. This separation between functionality
+              and code makes OOP so powerful.
             </p>
             <p class="lead">
               Inheritance
@@ -255,9 +324,31 @@
               property of another class. This eliminates redundant code between
               different classes. A popular use of inheritance is child classes,
               which can be made to inherit the data and code features of their
-              parent class. Functionality common to all the object types can be
-              reused eliminating redundant code.
+              parent class. This is key to web development with JavaScript
+              libraries such as React JS which allows for reusing and modifying
+              components that make up the UI. Functionality common to all the
+              object types can be reused eliminating redundant code.
             </p>
+
+            <p>
+              Inheritance can be applied to the Java example by creating a
+              deliveryVan vehichle as a child class of the vehichle class. This
+              vehichle has maintanence reimbersed by the company so it has been
+              removed from the Transportation costs. The subclass was created
+              with only the declaration and the calculateTransportationCost
+              override because the features that are the same were inherited
+              using the extends keyword.
+            </p>
+            <pre class="prettyprint lang-java">
+              public class deliveryVan extends Vehichle {
+
+                private double calculateTransportationCost(double price, double gasPerMonth, double monthsOfOwnership) {
+                  return this.price + (this.gasPerMonth * this.monthsOfOwnership);
+
+                }
+              }
+              </pre
+            >
             <p class="lead">
               Polymorphism
             </p>
@@ -266,8 +357,23 @@
               conditional statements associated with reusing functions. A
               methodology can be used in each object with differences handled in
               the object rather than a set of conditions within a function.
+              Going back to the vehichle example an array could be made to
+              compare the costs of ownership between the three versions of the
+              vehichle using a polymorphic array.
             </p>
+            <pre class="prettyprint lang-java">
+   public static void main(String[] args){
+     Vehichle costComparison[] = new Vehichle[1];
+     costComparison[0] = new HybridVehichle();
+     costComparison[1] = new companyVehichle();
 
+     for (Vehichle car : costComparison){
+        costComparison.getTransportationCost();
+     }
+
+   }
+              </pre
+            >
             <p class="lead">
               OOP is Another Way to Keep Improving
             </p>
